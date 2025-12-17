@@ -1,5 +1,5 @@
 #fix input
-file = open("day7input.txt", "r")
+file = open("day7\day7input.txt", "r")
 map = [line.strip() for line in file]
 part2map = [[i for i in line.strip()] for line in map.copy()]
 #met hoden
@@ -27,6 +27,19 @@ def findBeamPositions(outerBoundary, position):
     if position+1 <= boundaries[1]:
         partBeamPositions.add(position+1)
     return partBeamPositions
+
+def OutOfBounds(part2map, position):
+    return position[1] < 0 or position[1] >= len(part2map[0])
+
+def LeftOf(position):
+    return [position[0], position[1]-1]
+
+def RightOf(position):
+    return [position[0], position[1]+1]
+
+def Below(position):
+    return [position[0]+1, position[1]]
+
 
 #variables setup
 beamPositions = {map[0].index("S")}
@@ -78,16 +91,4 @@ def fickMeinGehirn(part2map, punkt):
 
 part2 = fickMeinGehirn(part2map, [0, part2map[0].index("S")])
 print(part2)
-
-def OutOfBounds(part2map, position):
-    return position[1] < 0 or position[1] >= len(part2map[0])
-
-def LeftOf(position):
-    return [position[0], position[1]-1]
-
-def RightOf(position):
-    return [position[0], position[1]+1]
-
-def Below(position):
-    return [position[0]+1, position[1]]
 
