@@ -1,6 +1,6 @@
-a = [3,2]
-b = [4,5]
+a = [1,2,3]
+b = [[i] for i in a]
+c = a
 
-a += b
-a.sort()
-print(a)
+a[1] = 7
+print(a, b, c)

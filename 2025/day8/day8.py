@@ -57,7 +57,6 @@ def addCircuit(circuits, currentShortestConnection):
     secondBoxInd = findIndex(circuits, secondBox)
 
     if firstBoxInd == secondBoxInd:
-        circuits.sort(key = len, reverse=True)
         return circuits
 
 
@@ -83,29 +82,29 @@ for line in file:
     CollectionOfJunctionBoxes.append(JunctionBox(int(box[0]),int(box[1]),int(box[2])))
 
 #Variablen Setup
-circuits = [[i] for i in CollectionOfJunctionBoxes.copy()]
+circuits = [[i] for i in CollectionOfJunctionBoxes]
 distances = []
 part2bool = True
 
 countOfConnections = 0
 limitOfConnections = 1000
-while countOfConnections < limitOfConnections:
-    currentDistancesOfAllConnections = getAllDistances(CollectionOfJunctionBoxes)
-    currentDistancesOfAllConnections.sort(key = lambda x: x[0])
+currentDistancesOfAllConnections = getAllDistances(CollectionOfJunctionBoxes)
+currentDistancesOfAllConnections.sort(key = lambda x: x[0])
+
+while True:
 
     circuits = addCircuit(circuits, currentDistancesOfAllConnections[countOfConnections])
 
     countOfConnections += 1
 
+    if limitOfConnections == countOfConnections:
+        print(part1Count(circuits))
+
     if len(circuits) == 1:
         break
 
-    if part2bool:
-        if countOfConnections == limitOfConnections:
-            limitOfConnections = 100000000
 
 
-print(part1Count(circuits))
 #12824*23560
 #[print(i[0], i[1].getPosition(), i[2].getPosition()) for i in currentDistancesOfAllConnections]
 #[print(i.getPosition()) for i in CollectionOfJunctionBoxes]
