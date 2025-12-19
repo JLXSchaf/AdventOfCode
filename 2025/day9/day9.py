@@ -27,6 +27,7 @@ for ind1 in range(len(redTilesPositions)):
 allDistances.sort()
 [print(i) for i in allDistances]
 
+#test
 # 11,-1 - 2,-5......11,-7 - 2,-3
 #-0123456789123|0123456789123
 #0.............|.............
