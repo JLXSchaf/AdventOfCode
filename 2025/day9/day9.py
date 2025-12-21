@@ -26,11 +26,11 @@ for ind1 in range(len(redTilesPositions)):
 
 allDistances.sort()
 [print(i) for i in allDistances]
-#test
-#test
-# 11,-1 - 2,-5......11,-7 - 2,-3
+
+# 11,-1 - 2,-5...11,-7 - 2,-3
 #-0123456789123|0123456789123
 #0.............|.............
+
 #1..OOOOOOOOOO.|.............
 #2..OOOOOOOOOO.|.............
 #3..OOOOOOOOOO.|..OOOOOOOOO..
@@ -38,4 +38,4 @@ allDistances.sort()
 #5..OOOOOOOOOO.|..OOOOOOOOO..
 #6.............|..OOOOOOOOO..
 #7.........#.#.|..OOOOOOOOO..
-#8.............|..............
+#8.............|.............
