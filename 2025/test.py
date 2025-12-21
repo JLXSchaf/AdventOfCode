@@ -1,6 +1,5 @@
 a = [1,2,3]
-b = [[i] for i in a]
-c = a
+b = [4,5,6]
+c = "(7,8,9)"
 
-a[1] = 7
-print(abs(2-7))
+print(c.strip("()").split(","))
